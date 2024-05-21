@@ -1,35 +1,35 @@
 ﻿Console.WriteLine("****************** - Arrays - *******************");
 
+// Tell me how many students and grades are to be entered 
+Console.WriteLine("Please indicate the number of grades to be entered: ");
+int numberOfGrades = Convert.ToInt32(Console.ReadLine());
+
 // Declare Fixed Size Array
-int[] grades = new int[5];
+int[] grades = new int[numberOfGrades];
+string[] students = new string[numberOfGrades];
 
 for (int i = 0; i < grades.Length; i++)
 {
+    Console.Write("Enter Student Name: ");
+    students[i] = Console.ReadLine();
+
     Console.Write("Enter Grade: ");
     grades[i] = Convert.ToInt32(Console.ReadLine());
 }
 
-Console.WriteLine("The Grades you have entered are: ");
-for (int i = 0; i < grades.Length; i++)
-{
-    Console.WriteLine(grades[i]);
-}
-
 // Declare Variable Sized Array
-string[] studentNames = { "Newton", "Joshua", "etc..." };
-
-// Add values to Fixed Size Array
-for (int i = 0; i < studentNames.Length; i++) 
-{
-    Console.Write("Enter Student Name: ");
-    studentNames[i] = Console.ReadLine();
-}
+//string[] studentNames = { "Newton", "Joshua", "etc..." };
 
 // Print values in Fixed Size Array
 Console.WriteLine("The student names you have entered are: ");
 
 // Print values in Variable Sized Array
-for (int i = 0; i < studentNames.Length; i++)
+for (int i = 0; i < numberOfGrades; i++)
 {
-    Console.WriteLine(studentNames[i]);
+    Console.WriteLine($"{students[i]}: {grades[i]}");
 }
+
+// Print values in list - Foreach
+// foreach (int g in grades){
+//      Console.WriteLine(g);
+// }
